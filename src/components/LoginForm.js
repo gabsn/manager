@@ -21,9 +21,7 @@ class LoginForm extends Component {
 
     renderButton() {
         if (this.props.loading)
-            return (
-                <Spinner />
-            )
+            return <Spinner />
         else
             return (
                 <Button onPress={this.onButtonPress.bind(this)}>
@@ -74,8 +72,6 @@ const styles = {
     }
 }
 
-const mapStateToProps = state => {
-    return { email, password, error, loading } = state.auth
-}
+const mapStateToProps = state => ({ email, password, error, loading } = state.auth)
 
 export default connect(mapStateToProps, { emailChanged, passwordChanged, loginUser })(LoginForm)
