@@ -18,6 +18,10 @@ export const employeeUpdate = ({ prop, value }) => {
 export const employeeCreate = ({ name, phone, shift }) => {
     const { currentUser } = firebase.auth()
 
+    // To prevent shift to be '' because redux only detects 
+    // changes from the previous state
+    shift = shift || 'Monday'
+
     return dispatch => {
         firebase.database().ref(`/users/${currentUser.uid}/employees`)
             .push({ name, phone, shift })

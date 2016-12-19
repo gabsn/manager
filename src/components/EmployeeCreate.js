@@ -8,13 +8,11 @@ class EmployeeCreate extends Component {
     render() {
         return (
             <Card>
-                <EmployeeForm {...this.props} />
+                <EmployeeForm {...this.props } />
                 <CardSection>
                     <Button 
                         onPress={() => {
-                            const { name, phone, shift } = this.props
-
-                            this.props.employeeCreate({ name, phone, shift: shift || "Monday" })}
+                            this.props.employeeCreate({ name, phone, shift } = this.props)}
                         }
                     >
                         Create
@@ -24,6 +22,8 @@ class EmployeeCreate extends Component {
         )
     }
 }
+
+const defaultShift = shift => shift || 'Monday'
 
 const mapStateToProps = state => {
     return { name, phone, shift } = state.employeeForm
