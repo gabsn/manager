@@ -17,11 +17,9 @@ class EmployeeEdit extends Component {
             <Card>
                 <EmployeeForm />
                 <CardSection>
-                    <Button onPress={() => {
-                        const { name, phone, shift } = this.props
-
-                        this.props.employeeSave({ name, phone, shift, uid: this.props.employee.uid})}}
-                    >
+                    <Button onPress={
+                        () => this.props.employeeSave({ name, phone, shift, uid: this.props.employee.uid } = this.props)
+                    }>
                         Save changes
                     </Button>
                 </CardSection>

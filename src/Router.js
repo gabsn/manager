@@ -27,22 +27,21 @@ const RouterComponent = () => {
                     style={sceneStyle}
                 />
 
-            <Scene
-                key="employeeCreate"
-                component={EmployeeCreate}
-                title="Create Employee"
-                style={sceneStyle}
-            />
+                <Scene
+                    key="employeeCreate"
+                    component={EmployeeCreate}
+                    title="Create Employee"
+                    style={sceneStyle}
+                />
 
-            <Scene
-                key="employeeEdit"
-                component={EmployeeEdit}
-                title="Edit Employee"
-                style={sceneStyle}
-            />
-
-        </Scene>
-    </Router>
+                <Scene
+                    key="employeeEdit"
+                    component={EmployeeEdit}
+                    title="Edit Employee"
+                    style={sceneStyle}
+                />
+            </Scene>
+        </Router>
     )
 }
 
