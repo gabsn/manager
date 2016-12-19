@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Text } from 'react-native'
+import { Text, TouchableWithoutFeedback, View } from 'react-native'
 import { CardSection } from './common'
 
 class ListItem extends Component {
@@ -7,8 +7,8 @@ class ListItem extends Component {
         const { name } = this.props.employee
 
         return (
-            <CardSection>
-                <Text>
+            <CardSection style={{ justifyContent: 'center' }}>
+                <Text style={styles.title}>
                     {name}
                 </Text>
             </CardSection>
@@ -19,7 +19,6 @@ class ListItem extends Component {
 const styles = {
     title: {
         fontSize: 18,
-        paddingLeft: 15,
     }
 }
 
