@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import { Text, TouchableWithoutFeedback, View } from 'react-native'
+import { Actions } from 'react-native-router-flux'
 import { CardSection } from './common'
 
 class ListItem extends Component {
@@ -7,11 +8,17 @@ class ListItem extends Component {
         const { name } = this.props.employee
 
         return (
-            <CardSection style={{ justifyContent: 'center' }}>
-                <Text style={styles.title}>
-                    {name}
-                </Text>
-            </CardSection>
+            <TouchableWithoutFeedback onPress={() => {
+                Actions.employeeCreate({ employee: this.props.employee })
+            }}>
+                <View>
+                    <CardSection style={{ justifyContent: 'center' }}>
+                        <Text style={styles.title}>
+                            {name}
+                        </Text>
+                    </CardSection>
+                </View>
+            </TouchableWithoutFeedback>
         )
     }
 }
