@@ -7,7 +7,7 @@ import EmployeeCreate from './components/EmployeeCreate'
 const RouterComponent = () => {
     return (
         <Router> 
-            <Scene key="main" >
+           <Scene key="main" >
                 <Scene
                     key="employeeList"
                     onRight={() => Actions.employeeCreate()}
