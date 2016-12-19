@@ -8,9 +8,9 @@ class ListItem extends Component {
         const { name } = this.props.employee
 
         return (
-            <TouchableWithoutFeedback onPress={() => {
-                Actions.employeeEdit({ employee: this.props.employee })
-            }}>
+            <TouchableWithoutFeedback onPress={
+                () => Actions.employeeEdit({ employee: this.props.employee })
+            }>
                 <View>
                     <CardSection style={{ justifyContent: 'center' }}>
                         <Text style={styles.title}>
