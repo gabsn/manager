@@ -10,10 +10,12 @@ class EmployeeCreate extends Component {
             <Card>
                 <EmployeeForm {...this.props} />
                 <CardSection>
-                    <Button onPress={() => {
-                        const { name, phone, shift } = this.props
+                    <Button 
+                        onPress={() => {
+                            const { name, phone, shift } = this.props
 
-                        this.props.employeeCreate({ name, phone, shift: shift || "Monday" })}}
+                            this.props.employeeCreate({ name, phone, shift: shift || "Monday" })}
+                        }
                     >
                         Create
                     </Button>
