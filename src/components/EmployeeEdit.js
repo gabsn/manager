@@ -3,7 +3,7 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import Communications from 'react-native-communications'
 import { Card, CardSection, Button, Confirm } from './common'
-import { employeeUpdate, employeeSave } from '../actions'
+import { employeeDelete, employeeUpdate, employeeSave } from '../actions'
 import EmployeeForm from './EmployeeForm'
 
 class EmployeeEdit extends Component {
@@ -44,7 +44,7 @@ class EmployeeEdit extends Component {
 
                 <Confirm 
                     visible={this.state.showModal}
-                    onAccept={() => {}}
+                    onAccept={() => this.props.employeeDelete({ uid: this.props.employee.uid })}
                     onDecline={() => this.setState({ showModal: false })}
                 >
                     Are you sure you want to fire her/him?
@@ -59,6 +59,7 @@ const mapStateToProps = state => {
 }
 
 export default connect(mapStateToProps, {
+    employeeDelete,
     employeeUpdate, 
     employeeSave,
 })(EmployeeEdit)
