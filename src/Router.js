@@ -7,7 +7,16 @@ import EmployeeCreate from './components/EmployeeCreate'
 const RouterComponent = () => {
     return (
         <Router> 
-           <Scene key="main" >
+            <Scene key="auth" >
+                <Scene 
+                    key="login"
+                    component={LoginForm}
+                    title="Please Login"
+                    style={sceneStyle}
+                />
+            </Scene>
+
+            <Scene key="main" >
                 <Scene
                     key="employeeList"
                     onRight={() => Actions.employeeCreate()}
@@ -17,23 +26,14 @@ const RouterComponent = () => {
                     style={sceneStyle}
                 />
 
-                <Scene
-                    key="employeeCreate"
-                    component={EmployeeCreate}
-                    title="Create Employees"
-                    style={sceneStyle}
-                />
-            </Scene>
-
-            <Scene key="auth" >
-                <Scene 
-                    key="login"
-                    component={LoginForm}
-                    title="Please Login"
-                    style={sceneStyle}
-                />
-            </Scene>
-        </Router>
+            <Scene
+                key="employeeCreate"
+                component={EmployeeCreate}
+                title="Create Employees"
+                style={sceneStyle}
+            />
+        </Scene>
+    </Router>
     )
 }
 
