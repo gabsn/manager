@@ -9,7 +9,7 @@ class ListItem extends Component {
 
         return (
             <TouchableWithoutFeedback onPress={() => {
-                Actions.employeeCreate({ employee: this.props.employee })
+                Actions.employeeEdit({ employee: this.props.employee })
             }}>
                 <View>
                     <CardSection style={{ justifyContent: 'center' }}>
